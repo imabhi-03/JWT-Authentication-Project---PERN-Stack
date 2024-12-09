@@ -77,6 +77,8 @@ function App() {
           <Route path="/login" element={ !isAuthenticated? <Login setAuth={setAuth} /> : <Navigate to ="/dashboard" />}/>
           <Route path="/register" element={ !isAuthenticated? <Register setAuth={setAuth} /> :<Navigate to="/login" />}/>
           <Route path="/dashboard" element={ isAuthenticated? <Dashboard setAuth={setAuth}/> : <Navigate to="/login" />}/>
+          <Route path="/" element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />} />
+
         </Routes> 
       </div>
 
